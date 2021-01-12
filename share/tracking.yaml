@@ -1,6 +1,6 @@
 PATHS:
   # Files produces with EddyIdentification
-  FILES_PATTERN: /home/emason/toto/Anticyclonic_*.nc
+  FILES_PATTERN: /py-eddy-tracker/share/Anticyclonic_*.nc
   # Path for saving of outputs
   SAVE_DIR: '/py-eddy-tracker/results/'
 
