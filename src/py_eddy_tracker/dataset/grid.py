@@ -656,7 +656,7 @@ class GridDataset(object):
         logger.debug("  + in_h_unit --> %s", in_h_unit)
 
         if in_h_unit is not None:
-           factor, _ = in_h_unit.to("m").to_tuple()
+            factor, _ = in_h_unit.to("m").to_tuple()
             logger.info(
                 "We will apply on step a factor to be coherent with grid : %f",
                 1 / factor,
