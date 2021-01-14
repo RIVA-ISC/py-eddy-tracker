@@ -638,6 +638,7 @@ class GridDataset(object):
         # The inf limit must be in pixel and  sup limit in surface
         if pixel_limit is None:
             pixel_limit = (4, 1000)
+            logger.debug("  + pixel_limit --> %s", pixel_limit)
 
         # Compute an interpolator for eke
         self.init_speed_coef(uname, vname)
@@ -647,10 +648,15 @@ class GridDataset(object):
         h_units = (
             self.units(grid_height) if force_height_unit is None else force_height_unit
         )
+        
+        logger.debug("  + h_units --> %s", h_units)
+        
         units = UnitRegistry()
         in_h_unit = units.parse_expression(h_units)
+        logger.debug("  + in_h_unit --> %s", in_h_unit)
+
         if in_h_unit is not None:
-            factor, _ = in_h_unit.to("m").to_tuple()
+           factor, _ = in_h_unit.to("m").to_tuple()
             logger.info(
                 "We will apply on step a factor to be coherent with grid : %f",
                 1 / factor,
